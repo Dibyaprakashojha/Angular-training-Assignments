@@ -1,0 +1,22 @@
+<div class="container" [ngStyle]="{ 'background-color': 'beige' }">
+  <h1>Online Book Shop</h1>
+  <a
+    [routerLink]="['about']"
+    routerLinkActive="router-link-active"
+    ngClass="display"
+    >About Us</a
+  >
+  <a
+    [routerLink]="['contact']"
+    routerLinkActive="router-link-active"
+    ngClass="display"
+    >Contact Us</a
+  >
+  <a
+    [routerLink]="['services']"
+    routerLinkActive="router-link-active"
+    ngClass="display"
+    >Services</a
+  >
+</div>
+<router-outlet></router-outlet>

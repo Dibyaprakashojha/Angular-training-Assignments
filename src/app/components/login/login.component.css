@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  padding: 10px;
+}

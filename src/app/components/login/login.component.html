@@ -1,0 +1,37 @@
+<h1>Admin Login Form</h1>
+<form #userForm="ngForm">
+  <div class="container">
+    <mat-form-field appearance="outline" [ngClass]="'formStyle'">
+      <mat-label for="username" [ngClass]="'formStyle'">Username:</mat-label>
+      <input
+        matInput
+        type="email"
+        name="username"
+        ngModel
+        #email
+        [ngClass]="'formStyle'"
+      />
+      <mat-hint [ngClass]="'formStyle'">Enter a valid username</mat-hint>
+    </mat-form-field>
+  </div>
+  <br />
+  <div class="container">
+    <mat-form-field appearance="outline" [ngClass]="'formStyle'">
+      <mat-label for="password" [ngClass]="'formStyle'">Password:</mat-label>
+      <input
+        matInput
+        type="password"
+        name="password"
+        ngModel
+        #password
+        [ngClass]="'formStyle'"
+      />
+      <mat-hint [ngClass]="'formStyle'">Enter a valid Password</mat-hint>
+    </mat-form-field>
+  </div>
+  <div class="container">
+    <button mat-raised-button color="warn" (click)="onSubmit(userForm)">
+      Sign In
+    </button>
+  </div>
+</form>

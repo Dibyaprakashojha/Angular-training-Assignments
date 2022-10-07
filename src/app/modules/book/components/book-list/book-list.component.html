@@ -1,0 +1,36 @@
+<!-- <div class="container">
+  <mat-card *ngFor="let book of books">
+    <mat-card-header>
+      <div mat-card-avatar></div>
+      <mat-card-title>{{ book.title }}</mat-card-title>
+      <mat-card-subtitle>{{ book.category }}</mat-card-subtitle>
+      <img mat-card-md-image src="{{ book.bookImg }}" />
+    </mat-card-header>
+    <mat-card-content>
+      {{ book.price | currency: "INR" }}
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="onSubmit(book)">
+        View More
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<router-outlet></router-outlet> -->
+
+<!-- DISPLAYING DATA IN TABLE FORMAT -->
+
+<!-- datasource -represents array -->
+<mat-table [dataSource]="books">
+  <!-- matcolumnDefName(unique), headerCell(column label), matCell(data)  -->
+  <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+    <mat-header-cell *matHeaderCellDef>
+      {{ column | uppercase }}
+    </mat-header-cell>
+    <mat-cell *matCellDef="let book">{{ book[column] }}</mat-cell>
+  </ng-container>
+
+  <!-- displayed columns represents the name of the column -->
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>

@@ -1,0 +1,12 @@
+<mat-toolbar color="warn" class="mat-elevation-z6">
+  <div *ngFor="let typeView of typeViews">
+    <button
+      mat-button
+      [routerLink]="[typeView.type.toLowerCase()]"
+      routerLinkActive="true"
+    >
+      {{ typeView.type }}
+    </button>
+  </div>
+</mat-toolbar>
+<router-outlet></router-outlet>
